@@ -3,7 +3,7 @@
 	@version 0.2.0
 */
 
-//Eastablish global namespace
+//Establish global namespace
 var noInfoPath = {};
 
 (function(angular){
