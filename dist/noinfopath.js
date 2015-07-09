@@ -5,7 +5,6 @@
 
 //Establish global namespace
 var noInfoPath = {};
-
 (function(angular){
 	function ProgressTracker() {
 		this.message = "Loading";

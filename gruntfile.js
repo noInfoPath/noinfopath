@@ -20,6 +20,12 @@ module.exports = function(grunt) {
                     'src/progress.js'
 		        ],
 		        dest: 'dist/noinfopath.js'
+		    },
+            readme: {
+		        src: [
+		        	'docs/noinfoath.md'
+		        ],
+		        dest: 'readme.md'
 		    }
 	 	},
         bumpup: {
@@ -65,7 +71,7 @@ module.exports = function(grunt) {
 	//Default task(s).
 	grunt.registerTask('build', ['karma:continuous', 'bumpup', 'version', 'concat:noinfopath','concat:dexie']);
 
-    grunt.registerTask('compile', ['karma:continuous', 'concat:noinfopath', 'nodocs:internal']);
+    grunt.registerTask('compile', ['concat:noinfopath', 'nodocs:internal', 'concat:readme']);
 
     grunt.registerTask('notest', ['concat:noinfopath', 'copy:test']);
 
