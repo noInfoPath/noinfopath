@@ -1,8 +1,8 @@
 {
-  "name": "noinfopath-data",
+  "name": "noinfopat",
   "version": "0.2.0",
-  "description": "noInfoPath data module",
-  "main": "noinfopath-data.js",
+  "description": "noInfoPath module",
+  "main": "noinfopath.js",
   "directories": {
     "test": "test"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://gitlab.imginconline.com/noinfopath/noinfopath-data.git"
+    "url": "http://gitlab.imginconline.com/noinfopath/noinfopath.git"
   },
   "author": "noInfoPath <info@noInfoPath.org> (http://www.noinfopath.org/)",
   "license": "MIT",
