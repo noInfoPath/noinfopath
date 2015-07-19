@@ -5,3 +5,7 @@
 
 //Establish global namespace
 var noInfoPath = {};
+
+(function(angular, undefined){
+	angular.module("noinfopath", []);
+})(angular);
