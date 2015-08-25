@@ -1,6 +1,6 @@
 /*
-	# NoInfoPath
-	@version 0.2.0
+ * # NoInfoPath
+ * @version 0.2.4
 */
 
 //Establish global namespace
@@ -72,4 +72,10 @@ var noInfoPath = {};
 	  }(Object, '__proto__'));
 	}
 	noInfoPath.setPrototypeOf = Object.setPrototypeOf;
+
+	function isGuid(val){
+		return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(val);
+	}
+
+	noInfoPath.isGuid = isGuid;
 })(angular);

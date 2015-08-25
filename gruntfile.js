@@ -16,14 +16,13 @@ module.exports = function(grunt) {
 	    concat: {
 		    noinfopath: {
 		        src: [
-		        	'src/global.js',
-                    'src/progress.js'
+		        	'src/global.js'
 		        ],
 		        dest: 'dist/noinfopath.js'
 		    },
             readme: {
 		        src: [
-		        	'docs/noinfoath.md'
+		        	'docs/noinfopath.md'
 		        ],
 		        dest: 'readme.md'
 		    }
@@ -36,7 +35,7 @@ module.exports = function(grunt) {
         		prefix: '@version\\s*'
       		},
     		defaults: {
-    			src: ['src/globals.js']
+    			src: ['src/global.js']
     		}
     	},
     	nodocs: {
@@ -45,13 +44,6 @@ module.exports = function(grunt) {
     				src: 'dist/noinfopath.js',
     				dest: 'docs/noinfopath.md',
     				start: ['/*','/**']
-    			}
-    		},
-    		"public": {
-    			options: {
-    				src: 'dist/noinfopath.js',
-    				dest: 'docs/noinfopath.md',
-    				start: ['/*']
     			}
     		}
     	},
