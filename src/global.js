@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 0.2.4
+ * @version 0.2.5
 */
 
 //Establish global namespace
@@ -77,5 +77,17 @@ var noInfoPath = {};
 		return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(val);
 	}
 
+	function createUUID() {
+        // Decent solution from http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+        var d = Date.now();
+        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (d + Math.random() * 16) % 16 | 0;
+            d = Math.floor(d / 16);
+            return (c === 'x' ? r : (r & 0x7 | 0x8)).toString(16);
+        });
+        return uuid;
+    };
+
 	noInfoPath.isGuid = isGuid;
+	noInfoPath.createUUID = createUUID;
 })(angular);
