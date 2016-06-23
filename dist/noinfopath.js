@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 0.2.5
+ * @version 2.0.1
 */
 
 //Establish global namespace
@@ -86,8 +86,19 @@ var noInfoPath = {};
             return (c === 'x' ? r : (r & 0x7 | 0x8)).toString(16);
         });
         return uuid;
-    };
+    }
 
+	function createNoid(){
+		var noid = createUUID();
+		return "NOID" + noid.replace(/-/g, "");
+	}
+
+	function isNoid(val) {
+		return /^[0-9a-fA-F]{8}[0-9a-fA-F]{4}[0-9a-fA-F]{4}[0-9a-fA-F]{4}[0-9a-fA-F]{12}$/.test(val);
+	}
+
+	noInfoPath.createNoid = createNoid;
+	noInfoPath.isNoid = isNoid;
 	noInfoPath.isGuid = isGuid;
 	noInfoPath.createUUID = createUUID;
 })(angular);

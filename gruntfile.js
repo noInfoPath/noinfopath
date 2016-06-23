@@ -9,7 +9,6 @@ module.exports = function(grunt) {
             test: {
                 files: [
                     //{expand:true, flatten:false, src: [ 'lib/js/noinfopath/*.*'], dest: 'build/'},
-                    {expand:true, flatten:true, src: [ 'dist/*.js'], dest: '../noinfopath-test-server-node/no/lib/js/noinfopath/'},
                 ]
             }
         },
