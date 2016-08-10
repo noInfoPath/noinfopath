@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 2.0.1
+ * @version 2.0.2
 */
 
 //Establish global namespace
@@ -97,8 +97,13 @@ var noInfoPath = {};
 		return /^[0-9a-fA-F]{8}[0-9a-fA-F]{4}[0-9a-fA-F]{4}[0-9a-fA-F]{4}[0-9a-fA-F]{12}$/.test(val);
 	}
 
+	function sanitize(val) {
+		return (val+"").replace(/^\d+|\W\d+|[ _.;,!"'/$]/g, '');
+	}
+
 	noInfoPath.createNoid = createNoid;
 	noInfoPath.isNoid = isNoid;
 	noInfoPath.isGuid = isGuid;
 	noInfoPath.createUUID = createUUID;
+	noInfoPath.sanitize = sanitize;
 })(angular);
