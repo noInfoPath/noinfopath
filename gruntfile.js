@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-version');
  	grunt.loadNpmTasks('grunt-nodocs');
 	//Default task(s).
-	grunt.registerTask('build', ['bumpup', 'version', 'concat:noinfopath']);
+	grunt.registerTask('build', ['bumpup', 'version', 'concat:noinfopath', "nodocs", "concat:readme"]);
 
     grunt.registerTask('compile', ['concat:noinfopath', 'nodocs:internal', 'concat:readme']);
 
