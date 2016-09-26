@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 2.0.2
+ * @version 2.0.3
 */
 
 //Establish global namespace
@@ -101,9 +101,38 @@ var noInfoPath = {};
 		return (val+"").replace(/^\d+|\W\d+|[ _.;,!"'/$]/g, '');
 	}
 
+	function resolveParams(taskParams, scope) {
+		var params = [];
+
+		if(taskParams) {
+
+			for(var p = 0; p < taskParams.length; p++) {
+				var param = taskParams[p];
+
+				if(angular.isObject(param)) {
+					var prov = param.provider === "scope" ? scope : $injector.get(param.provider),
+						meth = param.method ? prov[param.method] : undefined,
+						prop = param.property ? noInfoPath.getItem(prov, param.property) : undefined;
+					if(prop) {
+						params.push(prop);
+					} else if(meth) {
+						params.push(meth());
+					} else {
+						params.push(prov);
+					}
+				} else {
+					params.push(param);
+				}
+			}
+		}
+
+		return params;
+	}
+
 	noInfoPath.createNoid = createNoid;
 	noInfoPath.isNoid = isNoid;
 	noInfoPath.isGuid = isGuid;
 	noInfoPath.createUUID = createUUID;
 	noInfoPath.sanitize = sanitize;
+	noInfoPath.resolveParams = resolveParams;
 })(angular);
