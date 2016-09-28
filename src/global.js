@@ -1,13 +1,13 @@
 /*
  * # NoInfoPath
- * @version 2.0.4
+ * @version 2.0.5
 */
 
 //Establish global namespace
 var noInfoPath = {};
 
 (function(angular, undefined){
-	angular.module("noinfopath", []);
+	angular.module("noinfopath", ["PubSub"]);
 
 	/*jslint devel: true, indent: 2 */
 	// 15.2.3.2

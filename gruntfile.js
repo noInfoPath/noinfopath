@@ -15,7 +15,8 @@ module.exports = function(grunt) {
 	    concat: {
 		    noinfopath: {
 		        src: [
-		        	'src/global.js'
+		        	'src/global.js',
+					'src/pubsub.js'
 		        ],
 		        dest: 'dist/noinfopath.js'
 		    },
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
     	},
         watch: {
             files: ['src/*.js', 'test/*.spec.js'],
-            tasks: ['notest']
+            tasks: ['compile']
         }
 	});
 
