@@ -7,7 +7,7 @@
 var noInfoPath = {};
 
 (function(angular, undefined){
-	angular.module("noinfopath", ["PubSub"]);
+	angular.module("noinfopath", []);
 
 	/*jslint devel: true, indent: 2 */
 	// 15.2.3.2
