@@ -77,8 +77,13 @@ var noInfoPath = {};
 		return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(val);
 	}
 
-	function createUUID() {
+
+	function createUUID(empty) {
         // Decent solution from http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
+		if(empty === true) {
+			return "00000000-0000-0000-0000-000000000000";
+		}
+
         var d = Date.now();
         var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = (d + Math.random() * 16) % 16 | 0;
