@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 2.0.8
+ * @version 2.0.9
 */
 
 //Establish global namespace
@@ -134,12 +134,17 @@ var noInfoPath = {};
 		return params;
 	}
 
+	function splitCamelcase(string, options) {
+	    return string.split(/(?=[A-Z])/g).join(" ");
+	}
+
 	noInfoPath.createNoid = createNoid;
 	noInfoPath.isNoid = isNoid;
 	noInfoPath.isGuid = isGuid;
 	noInfoPath.createUUID = createUUID;
 	noInfoPath.sanitize = sanitize;
 	noInfoPath.resolveParams = resolveParams;
+	noInfoPath.splitCamelCaseAddSpace = splitCamelcase;
 })(angular);
 
 //pubsub.js
