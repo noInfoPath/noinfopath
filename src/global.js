@@ -1,6 +1,6 @@
 /*
  * # NoInfoPath
- * @version 2.0.9
+ * @version 2.0.10
 */
 
 //Establish global namespace
@@ -138,6 +138,44 @@ var noInfoPath = {};
 	    return string.split(/(?=[A-Z])/g).join(" ");
 	}
 
+	function _sort(sorts, arrayOfThings) {
+		function _compare(s, a, b) {
+			var aval = noInfoPath.getItem(a, s.column),
+				bval = noInfoPath.getItem(b, s.column);
+
+
+			if (s.dir === "desc") {
+				if (aval < bval) {
+					return 1;
+				}
+				if (aval > bval) {
+					return -1;
+				}
+			} else {
+				if (aval > bval) {
+					return 1;
+				}
+				if (aval < bval) {
+					return -1;
+				}
+			}
+
+			// a must be equal to b
+			return 0;
+
+		}
+
+		if (sorts) {
+			for (var s = 0; s < sorts.length; s++) {
+				var sort = sorts[s];
+
+				arrayOfThings = arrayOfThings.sort(_compare.bind(null, sort));
+			}
+		}
+
+		return arrayOfThings;
+	}
+
 	noInfoPath.createNoid = createNoid;
 	noInfoPath.isNoid = isNoid;
 	noInfoPath.isGuid = isGuid;
@@ -145,4 +183,5 @@ var noInfoPath = {};
 	noInfoPath.sanitize = sanitize;
 	noInfoPath.resolveParams = resolveParams;
 	noInfoPath.splitCamelCaseAddSpace = splitCamelcase;
+	noInfoPath.sortArray = _sort;
 })(angular);

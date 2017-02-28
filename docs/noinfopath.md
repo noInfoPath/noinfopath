@@ -1,5 +1,5 @@
 # NoInfoPath
-@version 2.0.9
+@version 2.0.10
 
 Alias a method while keeping the context correct,
 to allow for overwriting of target method.
