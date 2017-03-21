@@ -1,6 +1,6 @@
 {
   "name": "@noinfopath/noinfopath",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "description": "noInfoPath module",
   "main": "noinfopath.js",
   "directories": {
